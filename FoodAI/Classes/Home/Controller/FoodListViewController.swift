@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import MJRefresh
 
 class FoodListViewController: UIViewController {
 
@@ -46,24 +47,49 @@ class FoodListViewController: UIViewController {
     
     fileprivate func setData() {
 
+        // TableView
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.register(UINib(nibName: FoodListTableViewCell.className, bundle: nil), forCellReuseIdentifier: FoodListTableViewCell.cellReuseIdentifier)
+        mainTableView.refreshControl = UIRefreshControl()
+        mainTableView.refreshControl?.backgroundColor = .white
+        mainTableView.refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        let footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(lodaDataWithNextPage))
+        footer?.stateLabel.text = "正在幫你找更棒的餐廳"
+        footer?.stateLabel.isHidden = false
+        mainTableView.mj_footer = footer
         
         loadData()
     }
 
     // MARK: - Load Data
     
-    fileprivate func loadData() {
+    @objc func loadData() {
         
-        NetworkTool.shared.loadFoodListData(location: location, foodType: foodType) { [weak self](success, nextPageToken, data) in
+        self.mainTableView.refreshControl?.beginRefreshing()
+        NetworkTool.shared.loadFoodListData(location: location, foodType: foodType) { [weak self](success, data) in
             
             if success {
                 self!.restaurants.removeAll()
                 self!.restaurants = data
                 self!.mainTableView.reloadData()
             }
+            self!.mainTableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    @objc func lodaDataWithNextPage() {
+
+        self.mainTableView.mj_footer.beginRefreshing()
+
+        NetworkTool.shared.loadFoodListWithNextPage { [weak self](success, data) in
+            
+            if success {
+                
+                self!.restaurants += data
+                self!.mainTableView.reloadData()
+            }
+            self!.mainTableView.mj_footer?.endRefreshing()
         }
     }
 }

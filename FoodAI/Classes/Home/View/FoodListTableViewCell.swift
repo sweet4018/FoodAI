@@ -53,15 +53,7 @@ class FoodListTableViewCell: UITableViewCell {
     fileprivate func getPhotoUrl(photoreference: String) -> String {
         
         let url: String = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=" + String(format:"%.0f", kScreenWidth) + "&photoreference=" + photoreference + "&key=" + APIKeys.googleMapAPIKey
-        
-        //https://lh4.googleusercontent.com/-1wzlVdxiW14/USSFZnhNqxI/AAAAAAAABGw/YpdANqaoGh4/s1600-w400/Google%2BSydney
-        
-        //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAuPkibOAOJhs6zo0LdbNQcUKkJ-9yx_6yv5wBueWyXasuZuyk1A3XBl-yDBuPdlBIqm4leIfithLcs2rpb224tFOe7YxokRq74U1aVLF_o1M953DkM1prK2ct7iNk58q3EhBCiVf3M87kRJzqnHMYMSqCGhQjVviU8x0_WrwkJ8XC6JnWV3bipg&key=AIzaSyBscIniWYS9Z1hmAXFoK64UNkBjR5KDw0c
 
-        //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyBscIniWYS9Z1hmAXFoK64UNkBjR5KDw0c
-        
-// CmRbAAAAhOFZHaRJxz6xPoPoMi1QWPD293ssZD-r87le03gFB5sdxMIGpOBkq_WzyzYZ9uauCxxQhKMdOZSI_Vib6Te82tdVpeihsjn4cxiuy1JIp7CUFyWF_zh0n2vhJ5e92WLiEhAsExMu7SzjRvt88NexNaQRGhQhBLKbcb3QyiZu-MN4ZAMIafpxzQ
-        
         return url
     }
     

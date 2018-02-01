@@ -27,8 +27,14 @@ class Restaurant: NSObject {
         open_now = self.opening_hours!["open_now"] as? Bool ?? false
         rating = dict["rating"] as? Float ?? 0.0
         
-        photos = dict["photos"] as? Array ?? []
-        photoReference = self.photos![0]["photo_reference"] as? String ?? ""
+        photos = dict["photos"] as? Array
+        
+        if photos != nil {
+            photoReference = self.photos![0]["photo_reference"] as? String ?? ""
+        } else {
+            photoReference = ""
+        }
+        
         reference = dict["reference"] as? String ?? ""
         
     }
