@@ -1,0 +1,67 @@
+PODS:
+  - Alamofire (4.6.0)
+  - ApiAI (0.7.2):
+    - ApiAI/AudioFileConverter (= 0.7.2)
+    - ApiAI/Core (= 0.7.2)
+    - ApiAI/Events (= 0.7.2)
+    - ApiAI/ResponseMapping (= 0.7.2)
+    - ApiAI/UIKit (= 0.7.2)
+    - ApiAI/UserEntities (= 0.7.2)
+    - ApiAI/VoiceFileRequest (= 0.7.2)
+    - ApiAI/VoiceRequest (= 0.7.2)
+  - ApiAI/AudioFileConverter (0.7.2):
+    - ApiAI/Core
+  - ApiAI/Core (0.7.2)
+  - ApiAI/Events (0.7.2):
+    - ApiAI/Core
+  - ApiAI/ResponseMapping (0.7.2):
+    - ApiAI/Core
+  - ApiAI/UIKit (0.7.2):
+    - ApiAI/Core
+    - ApiAI/VoiceRequest
+  - ApiAI/UserEntities (0.7.2):
+    - ApiAI/Core
+  - ApiAI/VoiceFileRequest (0.7.2):
+    - ApiAI/Core
+  - ApiAI/VoiceRequest (0.7.2):
+    - ApiAI/Core
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
+  - MJRefresh (3.1.15.1)
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
+  - SnapKit (4.0.0)
+  - SVProgressHUD (2.2.2)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - ApiAI
+  - GoogleMaps
+  - GooglePlaces
+  - MJRefresh
+  - SDWebImage
+  - SnapKit
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  ApiAI: d4b49d3736f33ce6f3ef66dc33c0e0fccb23579e
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: 9830cb7dd211f8148d9804b10f11aace6128a6d5
+
+COCOAPODS: 1.4.0
